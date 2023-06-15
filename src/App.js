@@ -121,7 +121,7 @@ function App() {
   useEffect(() => {
     //
 
-    document.title = "DymaxTech";
+    document.title = "DymaxTech - HRM";
     const getAssociates = async () => {
       // const q = query(associatesCollectionRef, orderBy("LastName"));
       // const data = await getDocs(q);
