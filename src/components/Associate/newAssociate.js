@@ -131,7 +131,7 @@ export default function NewAssociate() {
       setNew={setNewAssocaite}
     />,
     <StepTwo next={handleNextStep} prev={handlePrevStep} data={newAssociate} />,
-    <StepThree id={associateID} />,
+    //<StepThree id={associateID} />,
   ];
 
   return (
@@ -257,13 +257,15 @@ const StepOne = (props) => {
                     required
                     size="small"
                     label="Department"
+                    //as={TextField}
                     fullWidth
                   >
-                    {allDepartments.map((department, index) => (
-                      <MenuItem key={index} value={`${department}`}>
-                        {department}
-                      </MenuItem>
-                    ))}
+                    <MenuItem key={1} value="Development">
+                    Development
+                  </MenuItem>
+                  <MenuItem key={2} value="Marketing">
+                    Marketing
+                  </MenuItem>
                   </Field>
                   {/* <Field
                   fullWidth
@@ -411,16 +413,24 @@ const StepOne = (props) => {
                     label="Office"
                     fullWidth={true}
                   >
-                    {allOffices.map((office, index) => (
+
+                    <MenuItem key={1} value="WindSong Palace">
+                    WindSong Palace
+                  </MenuItem>
+                    {/*--(FAIZ)
+                    allOffices.map((office, index) => (
                       <MenuItem key={index} value={`${office}`}>
                         {office}
-                      </MenuItem>
-                    ))}
+                      </MenuItem> ))
+                   */
+                  }
                   </Field>
                   <ErrorMessage name="Office" />
                 </FormControl>
               </Grid>
             )}
+
+            {/*
             <Grid item sx={4} sm={4} xl={4}>
               <Field
                 name="Manager"
@@ -441,16 +451,16 @@ const StepOne = (props) => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label="Manager"
+                    label="Lead/Manager"
                     required
                     variant="outlined"
                     fullWidth={true}
                   />
                 )}
               />
-              <ErrorMessage name="Manager" />
+              <ErrorMessage name="Lead/Manager" />
             </Grid>
-
+                */}
             <Grid item sx={4} sm={4} xl={4}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <Field
@@ -475,6 +485,8 @@ const StepOne = (props) => {
               </LocalizationProvider>
             </Grid>
             <ErrorMessage name="StartDate" />
+
+              
             <Grid item sx={4} sm={4} xl={4}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <Field
@@ -604,7 +616,7 @@ const StepTwo = (props) => {
                   Back
                 </Button>
                 <Button variant="contained" type="submit">
-                  Next
+                  Submit
                 </Button>
               </Grid>
             </Grid>
@@ -614,7 +626,11 @@ const StepTwo = (props) => {
       )}
     </Formik>
   );
+
+
 };
+
+/*
 const StepThree = ({ id }) => {
   const { isDemo } = useAuth();
 
@@ -685,4 +701,7 @@ const StepThree = ({ id }) => {
       </Grid>
     </div>
   );
-};
+}
+
+
+*/
