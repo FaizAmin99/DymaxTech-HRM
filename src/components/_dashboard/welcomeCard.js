@@ -6,7 +6,7 @@ export default function WelcomeCard() {
   const { userData } = useAuth();
   const RootStyle = styled(Card)(({ theme }) => ({
     boxShadow: "none",
-    // textAlign: "center",
+    textAlign: "center",
     padding: theme.spacing(16, 4),
     color: theme.palette.secondary.darker,
     backgroundColor: theme.palette.secondary.lighter,
@@ -14,8 +14,9 @@ export default function WelcomeCard() {
   return (
     <RootStyle>
 
+{ <Typography variant="h4">Welocome User!</Typography> }
 
-      {userData && (
+    {userData && (
 
         
         <Grid
@@ -25,7 +26,7 @@ export default function WelcomeCard() {
           alignItems="center"
           
         >
-          <Grid item xs={6} lg={6}>
+          <Grid item xs={100} lg={6}>
             <Grid container direction="column" justifyContent="flex-start">
               <Grid item>
                 <Typography variant="h4">
