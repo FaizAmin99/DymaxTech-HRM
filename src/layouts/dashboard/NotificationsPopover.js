@@ -128,9 +128,9 @@ function renderContent(notification) {
     };
   }
   return {
-    // avatar: (
-    //   <LikeIcon sx={{ color: "red", window: 15, height: 15 }} status="true" />
-    // ),
+     avatar: (
+       <LikeIcon sx={{ color: "red", window: 15, height: 15 }} status="true" />
+     ),
     title,
   };
 }

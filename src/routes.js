@@ -35,15 +35,15 @@ export default function Router() {
           ),
         },
         {
-          path: "associates",
+          path: "employees",
           element: (
             <PrivateRoute role="Standard">
               <Associates />
             </PrivateRoute>
           ),
         },
-        { path: "associates/:id", element: <AssociateDetails /> },
-        { path: "associates/newassociate", element: <NewAssociate /> },
+        { path: "employees/:id", element: <AssociateDetails /> },
+        { path: "employees/newemployees", element: <NewAssociate /> },
         { path: "register", element: isAdmin ? <SignUp /> : <Page403 /> },
         { path: "tasks", element: <MyTasks /> },
         {

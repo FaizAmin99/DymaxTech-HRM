@@ -67,7 +67,7 @@ const Login = () => {
 
   return (
     <div>
-      <Page title="Login">
+      <Page title="DymaxTech HRM - Login">
         {isLoginScreen && (
           <Grid
             sx={{ p: 1, pb: 5, pt: 6 }}

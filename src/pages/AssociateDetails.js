@@ -106,7 +106,7 @@ const AssociateDetails = () => {
   };
 
   const handleBack = () => {
-    history("/dashboard/associates");
+    history("/dashboard/employees");
   };
   const autoCloseSnack = () => {
     setAlert(false);
@@ -121,7 +121,7 @@ const AssociateDetails = () => {
         }}
       >
         <associateContext.Provider value={{ associateData, setAssociateData }}>
-          <Page title="HR Core - Associate details">
+          <Page title="DymaxTech - Employee details">
             <Grid
               container
               direction="row"

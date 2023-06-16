@@ -47,7 +47,7 @@ const Home = () => {
     // p: 4,
   };
   return (
-    <Page title="Dymax Dashboard">
+    <Page title="DymaxTech HRM - Dashboard">
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

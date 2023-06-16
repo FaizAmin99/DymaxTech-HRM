@@ -8,6 +8,13 @@ import {
 import InputAdornment from "@mui/material/InputAdornment";
 import { useAuth } from "../../utils/context/AuthContext";
 
+
+
+
+//NEW EMPLOYEE TAB ---------------------------------------------
+
+
+
 import { useNavigate } from "react-router-dom";
 import {
   Dialog,
@@ -128,15 +135,15 @@ export default function NewAssociate() {
   ];
 
   return (
-    <Page title="HR Core - New Associate">
+    <Page title="DymaxTech - New Employee">
       <Container>
         <Typography variant="h4" sx={{ pb: 1 }}>
-          Add new Associate
+          Add new Employee
         </Typography>
         {currentStep === 0 && (
           <Button
             variant="outlined"
-            onClick={() => history("/dashboard/associates")}
+            onClick={() => history("/dashboard/employees")}
             size="medium"
           >
             Back
@@ -335,7 +342,7 @@ const StepOne = (props) => {
                 as={TextField}
                 InputProps={{
                   startAdornment: (
-                    <InputAdornment position="start">£</InputAdornment>
+                    <InputAdornment position="start">PKR</InputAdornment>
                   ),
                 }}
               />

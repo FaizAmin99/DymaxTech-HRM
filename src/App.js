@@ -266,12 +266,12 @@ function App() {
                                 path="/"
                                 element={
                                   <PrivateRoute role="Standard">
-                                    <Navigate to="/dashboard/home" />
+                                    <Navigate to="/login" />
                                   </PrivateRoute>
                                 }
                               ></Route>
                               <Route
-                                path="dashboard/associates"
+                                path="dashboard/employees"
                                 element={
                                   <PrivateRoute role="Standard">
                                     <Associates />
@@ -279,7 +279,7 @@ function App() {
                                 }
                               ></Route>
                               <Route
-                                path="dashboard/associates/:id"
+                                path="dashboard/employees/:id"
                                 element={
                                   <PrivateRoute role="Standard">
                                     <AssociateDetails />
@@ -287,7 +287,7 @@ function App() {
                                 }
                               ></Route>
                               <Route
-                                path="dashboard/associates/newassociate"
+                                path="dashboard/employees/newemployees"
                                 element={
                                   <PrivateRoute role="Standard">
                                     <NewAssociate />
@@ -352,7 +352,7 @@ function App() {
                                 }
                               ></Route>
                               <Route
-                                path="dashboard/associates/newassociate"
+                                path="dashboard/employees/newemployees"
                                 element={
                                   <PrivateRoute role="Standard">
                                     <NewAssociate />

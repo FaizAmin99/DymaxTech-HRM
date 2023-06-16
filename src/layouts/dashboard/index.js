@@ -30,7 +30,7 @@ const MainStyle = styled("div")(({ theme }) => ({
   },
 }));
 
-// ----------------------------------------------------------------------
+// Sidebar Moving----------------------------------------------------------------------
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);

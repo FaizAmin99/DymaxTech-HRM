@@ -60,7 +60,7 @@ export default function AverageSalary() {
   }, [associates]);
   const formatter = new Intl.NumberFormat(undefined, {
     style: "currency",
-    currency: "GBP",
+    currency: "PKR",
     maximumSignificantDigits: 3,
   });
   return (
@@ -75,7 +75,7 @@ export default function AverageSalary() {
             <Typography variant="h3">
               {chartData ? formatter.format(chartData) : null}
             </Typography>
-            <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+            <Typography variant="subtitle2" sx={{ opacity: 15 }}>
               Average Salary
             </Typography>
           </div>

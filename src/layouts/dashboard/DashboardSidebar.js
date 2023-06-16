@@ -12,7 +12,7 @@ import Logo from "../../components/Logo";
 import sidebarConfig from "./SidebarConfig";
 // import account from '../../_mocks_/account';
 
-// ----------------------------------------------------------------------
+// DASHBOARD SIDEBAR SPECS----------------------------------------------------------------------
 
 const DRAWER_WIDTH = 280;
 
@@ -42,6 +42,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     [pathname]
   );
 
+
+  //Setting for the Sidebar lower Text
   const renderContent = (
     <Scrollbar
       sx={{
@@ -65,7 +67,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box>
         <Grid container justifyContent="center" sx={{ pb: 2 }}>
           <Typography variant="h7" color="lightGrey">
-            Version 0.78.1
+            //Mohammad FAIZ Amin
           </Typography>
         </Grid>
       </Box>

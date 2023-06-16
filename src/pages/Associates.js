@@ -177,7 +177,7 @@ const Associates = () => {
   //   return toExport;
   // };
   return (
-    <Page title="DymaxTech - Associates">
+    <Page title="DymaxTech - Employees">
       <Box>
         <Container maxWidth="xl" sx={{ pb: 5 }}>
           <Stack
@@ -187,11 +187,11 @@ const Associates = () => {
             mb={2}
           >
             <Typography variant="h4" gutterBottom>
-              Associates
+            Employees
             </Typography>
 
-            <Button variant="contained" component={Link} to={"newassociate"}>
-              New Associate
+            <Button variant="contained" component={Link} to={"newemployees"}>
+              New Employee
             </Button>
           </Stack>
           {associatesData && (
@@ -237,7 +237,7 @@ const Associates = () => {
                               hover
                               sx={{ underline: "false" }}
                               component={Link}
-                              to={`/dashboard/associates/${id}`}
+                              to={`/dashboard/employees/${id}`}
                             >
                               <TableCell align="left" />
                               <TableCell

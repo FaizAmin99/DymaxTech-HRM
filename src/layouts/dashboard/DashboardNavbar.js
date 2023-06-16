@@ -34,7 +34,7 @@ const RootStyle = styled(AppBar)(({ theme }) => ({
   WebkitBackdropFilter: "blur(6px)", // Fix on Mobile
   // backgroundColor: theme.palette.background.paper,
   backgroundColor: theme.palette.grey[100],
-  borderBottom: `solid 1px ${alpha(theme.palette.grey[500], 0.12)}`,
+  borderBottom: `solid 1px ${alpha(theme.palette.grey[100], 0.12)}`,
 
   // 0.72
   [theme.breakpoints.up("lg")]: {
@@ -82,12 +82,15 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         </MHidden>
         {/* <Grid container direction="rows" justifyContent="space-between"> */}
         {/* <Grid item> */}
+
         <Breadcrumbs aria-label="breadcrumb">
           {pathArray.length === 3 &&
           pathArray.includes("associates" && associatedetails)
             ? (pathArray[2] =
                 associatedetails.FirstName + " " + associatedetails.LastName)
             : null}
+
+            {/*For the text showing at the bar of Dashboard/Give Thanks*/}
           {pathArray.map((name, index) =>
             name === "givethanks" ? (
               <div key={name}>Give Thanks</div>
