@@ -63,7 +63,7 @@ const sidebarConfig = [
       },
     ],
   },
-  {
+ {
     title: "register",
      path: "/dashboard/register",
      icon: getIcon(personAddFill),

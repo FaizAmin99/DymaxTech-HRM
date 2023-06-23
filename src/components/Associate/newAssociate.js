@@ -390,11 +390,11 @@ const StepOne = (props) => {
                   label="Employment Status"
                   // label="Employment Status"
                 >
-                  <MenuItem key={1} value="Active">
-                    Employed
+                  <MenuItem key={1} value="Employed">
+                    Active
                   </MenuItem>
-                  <MenuItem key={2} value="Inactive">
-                    Terminated
+                  <MenuItem key={2} value="Terminated">
+                    Inactive
                   </MenuItem>
                 </Field>
                 <ErrorMessage name="EmplStatus" />
@@ -529,6 +529,136 @@ const StepOne = (props) => {
   );
 };
 
+
+
+
+
+
+
+
+
+const StepTwo = (props) => {
+  const handleSubmit = (values) => {
+    props.next(values);
+  };
+
+  const handlePrev = (values) => {
+    props.prev(values);
+  };
+
+  return (
+    <Formik
+      validationSchema={stepTwoValidationSchema}
+      initialValues={props.data}
+      onSubmit={handleSubmit}
+    >
+      {({ setFieldValue }) => (
+        <Form>
+          <Grid
+            sx={{ p: 3, pb: 2, pt: 6 }}
+            container
+            columnSpacing={2}
+            rowSpacing={2}
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+          >
+            <Grid item sx={4} sm={4} xl={4}>
+              <Field
+                fullWidth
+                required
+                name="emergencyInfo.FirstName"
+                size="small"
+                label="Emergency Contact First Name"
+                as={TextField}
+              />
+              <ErrorMessage name="emergencyInfo.FirstName" />
+            </Grid>
+            <Grid item sx={4} sm={4} xl={4}>
+              <Field
+                fullWidth
+                required
+                name="emergencyInfo.LastName"
+                size="small"
+                label="Emergency Contact Last Name"
+                as={TextField}
+              />
+              <ErrorMessage name="emergencyInfo.LastName" />
+            </Grid>
+            <Grid item sx={4} sm={4} xl={4}>
+              <Field
+                fullWidth
+                required
+                name="emergencyInfo.TelephoneNumber"
+                size="small"
+                label="Emergency Contact Telephone Number"
+                as={TextField}
+              />
+              <ErrorMessage name="emergencyInfo.TelephoneNumber" />
+            </Grid>
+            <Grid item sx={4} sm={4} xl={4}>
+              <Field
+                fullWidth
+                required
+                name="emergencyInfo.Relationship"
+                size="small"
+                label="Emergency Contact Relationship"
+                as={TextField}
+              />
+              <ErrorMessage name="emergencyInfo.Relationship" />
+            </Grid>
+          </Grid>
+          <Grid
+            sx={{ p: 3, pb: 2 }}
+            container
+            columnSpacing={2}
+            rowSpacing={2}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item>
+              <Button variant="contained" onClick={() => handlePrev(props.data)}>
+                Back
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" type="submit">
+                Next
+              </Button>
+            </Grid>
+          </Grid>
+        </Form>
+      )}
+    </Formik>
+  );
+};
+
+const stepTwoValidationSchema = Yup.object({
+  emergencyInfo: Yup.object({
+    FirstName: Yup.string().required().label("Emergency Contact First Name"),
+    LastName: Yup.string().required().label("Emergency Contact Last Name"),
+    TelephoneNumber: Yup.string().required().label("Emergency Contact Telephone Number"),
+    Relationship: Yup.string().required().label("Emergency Contact Relationship"),
+  }),
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const stepTwoValidationSchema = Yup.object({
   emergencyInfo: Yup.object().shape({
     FirstName: Yup.string().required().label("First Name"),
@@ -621,7 +751,7 @@ const StepTwo = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          {/* <button type="submit">Submit</button> */}
+          {/* <button type="submit">Submit</button> *//*
         </Form>
       )}
     </Formik>
@@ -629,14 +759,130 @@ const StepTwo = (props) => {
 
 
 };
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const StepThree = ({ id }) => {
+  const { isDemo } = useAuth();
+
+  const [open, setOpen] = useState(false);
+  const history = useNavigate();
+
+  //const handleSubmit = () => {
+    // Logic to store the records
+    //// ...
+
+    // Open the success dialog
+    //setOpen(true);
+  //};
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"New Associate successfully added!"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Please select where you wish to go:
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => history('/associates/')}>
+            All Associates
+          </Button>
+          {!isDemo && (
+            <Button
+              onClick={() => history(`/dashboard/associates/${id}`)}
+              color="success"
+            >
+              See new Associate profile
+            </Button>
+          )}
+        </DialogActions>
+      </Dialog>
+      <Grid container sx={{ padding: 2 }}>
+        <Grid item xs={12} lg={12} md={12}>
+          <AssociateDocuments userID={id} />
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justifyContent="flex-end"
+          alignItems="flex-end"
+          rowSpacing={2}
+          columnSpacing={2}
+          pt={3}
+          pb={4}
+        >
+          <Grid item>
+            <Button
+              variant="contained"
+              type="button"
+              //onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 const StepThree = ({ id }) => {
   const { isDemo } = useAuth();
 
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
+   const handleClickOpen = () => {
+     setOpen(true);
+   };
 
   const handleClose = () => {
     setOpen(false);
@@ -702,6 +948,5 @@ const StepThree = ({ id }) => {
     </div>
   );
 }
-
 
 */
