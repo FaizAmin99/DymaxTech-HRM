@@ -106,7 +106,7 @@ export default function DepartmentGraph() {
 
   return (
     <Card>
-      <CardHeader title="Associates per Department" />
+      <CardHeader title="Employees per Department" />
       {loading && (
         <Stack
           // direction="row"

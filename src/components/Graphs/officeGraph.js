@@ -94,7 +94,7 @@ export default function OfficeGraph() {
   return (
     <Card>
       <Typography component="div">
-        <CardHeader title="Associates per Office" sx={{ fontWeight: "bold" }} />
+        <CardHeader title="Employees per Office" sx={{ fontWeight: "bold" }} />
       </Typography>
       {loadingOffice && (
         <Stack

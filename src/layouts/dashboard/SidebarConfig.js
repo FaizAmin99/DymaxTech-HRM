@@ -49,16 +49,16 @@ const sidebarConfig = [
     icon: getIcon(umbrellaBeach),
   },
   {
-    title: "Thanks",
+    title: "Tasks",
     path: "/thanks",
     icon: getIcon(awardIcon),
     children: [
       {
-        title: "all thanks",
+        title: "All tasks",
         path: "/thanks",
       },
       {
-        title: "Give thanks",
+        title: "Give Tasks",
         path: "/thanks/givethanks",
       },
     ],
