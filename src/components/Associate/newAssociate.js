@@ -390,10 +390,10 @@ const StepOne = (props) => {
                   label="Employment Status"
                   // label="Employment Status"
                 >
-                  <MenuItem key={1} value="Employed">
+                  <MenuItem key={1} value="Active">
                     Employed
                   </MenuItem>
-                  <MenuItem key={2} value="Terminated">
+                  <MenuItem key={2} value="Inactive">
                     Terminated
                   </MenuItem>
                 </Field>

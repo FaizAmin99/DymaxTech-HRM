@@ -63,11 +63,11 @@ const sidebarConfig = [
       },
     ],
   },
-  // {
-  //   title: "register",
-  //   path: "/dashboard/register",
-  //   icon: getIcon(personAddFill),
-  // },
+  {
+    title: "register",
+     path: "/dashboard/register",
+     icon: getIcon(personAddFill),
+   },
   {
     title: "admin",
     path: "/admin",
