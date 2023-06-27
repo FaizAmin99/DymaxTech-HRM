@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-MongoClient.connect("mongodb+srv://faiz123:faiz123@clusterfaiz.qupdcy6.mongodb.net/", {
+MongoClient.connect("", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
